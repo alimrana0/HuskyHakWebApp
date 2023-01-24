@@ -1,0 +1,155 @@
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title> Forum </title>
+	<link rel="stylesheet" href = 'styles.css'>
+    <div class="topnav">
+        <a  href="{{ url_for('index') }}">Home</a>
+        <a  href="{{ url_for('forum') }}" >Post {{ request.form['name'] }}</a>
+        <a class="active" href="{{ url_for('make_forum') }}" >Make Forum</a>
+        <a href="{{ url_for('view_forums') }}" >View all Forums</a>
+        <a href="{{ url_for('logout') }}" >Logout</a>
+      </div>
+	</head>
+</br></br></br></br>
+	<body class = "forum">
+        <div class="commentcontents" align="center" >
+      <h2>Make a New Forum</h2>
+    <form action="{{ url_for('make_forum') }}" method="post">
+			<div class="msg">{{ msg }}</div>
+				</br>
+				<input id="name" name="name" type="text" placeholder="Enter Forum Name" class="textbox"/></br></br>
+				<input type="submit" class="btn" value="Add Forum"></br>
+			</form>
+
+  </div>
+		<div class="row">
+
+
+            <div class="card">
+                <h2 class="title">{{ request.form['name'] }}</h2>
+              </br></br></br>
+              
+              </div>
+  </div>
+    <style>
+            .form{
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+      .topnav {
+  background-color: #333;
+  overflow: hidden;
+}
+        /* Style the links inside the navigation bar */
+.topnav a {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+/* Change the color of links on hover */
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+/* Add a color to the active/current link */
+.topnav a.active {
+  background-color: white;
+  color: black;
+}
+.title{
+    color: white;
+}
+* {
+   margin: 0;
+   padding: 0;
+   font-family: "DIN Alternate";
+}
+
+	.commentcontents{
+    padding: 20px;
+    background: white;
+    color:black;
+    
+}
+.forum{
+    background:crimson;
+}
+
+    .postbtn {
+    color: white;
+    background: crimson;
+    border: 1px solid #fff;
+    margin: 35px 0 10px;
+    height: 32px;
+    font-size: 12px;
+    border-radius: 20px;
+    padding: 5px;
+    box-shadow: 0px 1px grey;
+    }
+
+    
+    .form{
+        background: crimson;
+            padding:25px;
+			margin-top: 20px;
+            width: 50%;
+            height: 350px;
+            position: relative;
+    }
+
+    .forumtitle, .textbox {
+        color: black;
+        padding: 15px;
+        background-color: white;
+        padding-left: 20px;
+        
+    }
+
+    
+
+        a {
+            text-decoration: none;
+            color: black;
+        }
+        
+        p {
+            margin: 5px 0;
+        }
+        .top-bar {
+            background-color: skyblue;
+            
+        }
+        .main {
+            background-color: crimson;
+            padding:5px;
+			margin-top: 20px;
+        }
+        .row {
+            padding: 5px 0;
+        }
+        .bottom {
+            display: flex;
+            color: grey;
+            font-size: 12px;
+        }
+        .timestamp {
+            padding-left: 10px;
+        }
+
+        .card {
+            padding: 20px;
+            color: white;
+        }
+
+        .date {
+            color: white;
+        }
+    </style>
+	</body>
+</html>

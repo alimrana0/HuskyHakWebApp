@@ -1,0 +1,139 @@
+<!-- Store this code in 'index.html' file inside the 'templates' folder-->
+
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title> Index </title>
+		<link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+      <div class="topnav">
+         <a class="active" href="#home">Home</a>
+         <a href="{{ url_for('forum') }}" >Post {{ request.form['name'] }}</a>
+         <a href="{{ url_for('make_forum') }}" >Make Forum</a>
+         <a href="{{ url_for('view_forums') }}" >View all Forums</a>
+         <a href="{{ url_for('logout') }}" >Logout</a>
+         
+
+       </div>
+
+   </head>
+<body>
+   
+  
+   <div  class="container" >
+     
+	   
+	   <div class="box" align="center">
+      </br> </br>
+         <h1>home of huskies</h1>
+         </br></br>
+         
+         <p> On Husky Hak, anonymously connect with fellow huskies</p>
+      </br></br>
+		   <p> Welcome  {{session.username}}</p>
+      </br></br>
+      <img src="{{url_for('static', filename='HuskyHak.png')}}" align="center" class="huskylogo"/>
+         
+		  
+		   </div>
+   </div>
+   
+</body>
+<style>
+   .topnav {
+  background-color: #333;
+  overflow: hidden;
+}
+
+/* Style the links inside the navigation bar */
+.topnav a {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+/* Change the color of links on hover */
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+/* Add a color to the active/current link */
+.topnav a.active {
+  background-color: white;
+  color: black;
+}
+* {
+   margin: 0;
+   padding: 0;
+   
+   font-family: "DIN Alternate";
+}
+
+.huskylogo{
+   width: 100%;
+}
+
+.logoutforum {
+   padding: 8px;
+
+   background: gainsboro;
+   border: 1px solid #fff;
+
+   font-size: 12px;
+   border-radius: 20px;
+   position: absolute;
+   top: 10px;
+   right: 10px;
+
+}
+
+.container {
+   background: crimson;
+   width: 100%;
+   height: 100vh;
+   font-family: "DIN Alternate";
+   color: aliceblue;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+
+}
+
+.box {
+   width: 50%;
+   height:100%;
+   background: white;
+   color: crimson;
+}
+
+.btn {
+   width: 50%;
+   background: gainsboro;
+   border: 1px solid #fff;
+   margin: 35px 0 10px;
+   height: 32px;
+   font-size: 12px;
+   border-radius: 20px;
+
+}
+
+.logout {
+   padding: 8px;
+   width: 50%;
+   background: gainsboro;
+   border: 1px solid #fff;
+   margin: 35px 0 10px;
+   height: 32px;
+   font-size: 12px;
+   border-radius: 20px;
+
+}
+
+.textbox{
+   padding:4px;
+}
+</style>
+</html>

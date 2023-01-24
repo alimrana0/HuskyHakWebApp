@@ -1,0 +1,108 @@
+<!-- Store this code in 'login.html' file inside the 'templates' folder -->
+
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title> Login </title>
+<!--		<link rel="stylesheet"  href="{{ url_for('static', filename='style.css') }}">-->
+			<link rel="stylesheet" href = 'styles.css'>
+	</head>
+	<body>
+		<div align="center">
+		<div align="center" class="container">
+			</br></br></br></br></br>
+			<div class = "card">
+				</br></br></br></br></br>
+				<div class = "card-front">
+			<div class="header">
+				<h1 class="word">Login</h1>
+			</div></br>
+			<h2 class="word">
+				<form action="{{ url_for('login') }}" method="post">
+				<div class="msg">{{ msg }}</div></br>
+					<input id="username" name="username" type="text" placeholder="Enter Your Username" class="textbox"/></br></br>
+					<input id="password" name="password" type="password" placeholder="Enter Your Password" class="textbox"/></br>
+					<input type="submit" class="btn" value="Sign In"></br></br>
+				</form>
+			</h2>
+			<p class="bottom">Dont't have an account? <a class="bottom" href="{{url_for('register')}}"> Sign Up here</a></p>
+		</div>
+			</div>
+		</div>
+		</div>
+	<style>
+		* {
+    margin: 0;
+    padding: 0;
+}
+
+.forum {
+      background: crimson;
+}
+
+.logoutforum {
+    padding: 8px;
+
+    background: gainsboro;
+    border: 1px solid #fff;
+
+    font-size: 12px;
+    border-radius: 20px;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+
+}
+
+*{
+    font-family: "DIN Alternate";
+}
+
+.container {
+    background: crimson;
+    width: 100%;
+    height: 100vh;
+    font-family: "DIN Alternate";
+    color: aliceblue;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.card {
+    width: 350px;
+    height: 500px;
+    box-shadow: 0 0 40px 20px rgba(0,0,0,0.26);
+}
+
+.btn {
+    width: 50%;
+    background: gainsboro;
+    border: 1px solid #fff;
+    margin: 35px 0 10px;
+    height: 32px;
+    font-size: 12px;
+    border-radius: 20px;
+
+}
+
+.logout {
+    padding: 8px;
+    width: 50%;
+    background: gainsboro;
+    border: 1px solid #fff;
+    margin: 35px 0 10px;
+    height: 32px;
+    font-size: 12px;
+    border-radius: 20px;
+
+}
+
+.textbox{
+    padding:4px;
+}
+
+	</style>
+	</body>
+</html>
